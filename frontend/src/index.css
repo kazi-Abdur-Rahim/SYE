@@ -1,0 +1,49 @@
+/* Tailwidn css Config */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Mode Change Css */
+.dark {
+  background-color: #05141c;
+}
+
+.light {
+  background-color: rgba(241, 251, 251, 0.5);
+}
+
+.light h2 span{
+  color: #29313D;
+}
+
+.light input {
+  background-color: #fff;
+  color: #29313D;
+  border: 1px solid #848F95;
+}
+
+.light form p {
+  color: #D17274;
+}
+
+.light p{
+  color: #05141c;
+}
+
+.light label {
+  color: #848F95;
+}
+
+.light button {
+  box-shadow: none !important;
+}
+
+.light .avatar {
+  background-color: rgba(241, 251, 251, 0.5);
+  border-color: #21D997;
+}
+
+.light .singin {
+  color: #05141c;
+}
