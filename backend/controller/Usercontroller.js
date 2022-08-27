@@ -1,7 +1,7 @@
 const Users = require('../models/UserModel')
 
 
-const newuser = async (req,res)=>{
+exports.newuser = async (req,res)=>{
     try{
         const { 
             fName,
@@ -29,5 +29,3 @@ const newuser = async (req,res)=>{
     }
 
 }
-
-module.exports = newuser
