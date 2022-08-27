@@ -1,5 +1,6 @@
 const express = require('express')
 const { connect } = require('./database/dbConfig')
+const userRouter = require('./routes/UserRouter')
 require('dotenv').config();
 
 // Database-connection
@@ -10,7 +11,7 @@ const app = express()
 app.use(express.json())
 
 //all-work
-
+app.use('/api',userRouter);
 
 
 
