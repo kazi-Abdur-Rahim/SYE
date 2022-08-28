@@ -9,6 +9,10 @@
   background-color: #05141c;
 }
 
+.dark select {
+  background-color: #05141c;
+}
+
 .light {
   background-color: rgba(241, 251, 251, 0.5);
 }
@@ -47,3 +51,10 @@
 .light .singin {
   color: #05141c;
 }
+
+.select {
+  position: relative;
+  overflow: hidden;
+}
+
+

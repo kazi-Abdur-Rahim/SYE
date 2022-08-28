@@ -28,7 +28,7 @@ const Login = () => {
           password: formik.values.password,
       })
       )
-      // navigate('/home')
+      navigate('/')
     },
   });
 

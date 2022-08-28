@@ -1,5 +1,6 @@
 const Users = require('../models/UserModel')
-
+const { varifyEmail }  = require('../handaler/Varification')
+ 
 
 exports.newuser = async (req,res)=>{
     try{
@@ -11,8 +12,17 @@ exports.newuser = async (req,res)=>{
             date,
             gender,
             verified
-         } = req.body
-    
+         } = req.body;
+
+         console.log(varifyEmail(email))
+
+        if(!varifyEmail(email)) {
+            return res.status(400).json({
+                message: "Invalid Email Address"
+            });
+        }
+
+
          const User = await new Users({ 
             fName,
             lName,

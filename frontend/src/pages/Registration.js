@@ -4,6 +4,7 @@ import { useFormik } from 'formik'
 import register from '../register.png'
 import {signUp} from '../validation/index'
 import { BsToggleOn,BsToggleOff } from 'react-icons/bs';
+import axios from 'axios';
 
 let initialValues = {
   fName : '',
@@ -22,7 +23,15 @@ const Registration = () => {
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: signUp,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      let {data} = await axios.post("/api/signup",{
+        fName: formik.values.fName,
+        lName: formik.values.lName,
+        email: formik.values.email,
+        password: formik.values.password,
+        date: formik.values.date,
+        gender: formik.values.gender,
+      })
       navigate('/login')
     },
   });
@@ -167,7 +176,7 @@ const Registration = () => {
                 </picture>
               </div>
           </div>
-          <p className='text-white font-primary text-lg mt-3'>Already have an account? <NavLink className="text-primary_color hover:underline" to="/">Sign in</NavLink></p>
+          <p className='text-white font-primary text-lg mt-3'>Already have an account? <NavLink className="text-primary_color hover:underline" to="/login">Sign in</NavLink></p>
           </div>
     </div>
       </div>

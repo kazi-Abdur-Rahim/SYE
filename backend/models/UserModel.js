@@ -28,7 +28,7 @@ const UserModel = new Schema({
     },
 
     date:{
-        type    : Number,
+        type    : Date,
         require : true,
     },
 
