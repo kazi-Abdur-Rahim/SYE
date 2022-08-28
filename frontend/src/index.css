@@ -3,7 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /* Mode Change Css */
 .dark {
   background-color: #05141c;
@@ -14,29 +13,33 @@
 }
 
 .light {
-  background-color: rgba(241, 251, 251, 0.5);
+  background-color: #effffd;
 }
 
-.light h2 span{
-  color: #29313D;
+.light h2 span {
+  color: #29313d;
 }
 
 .light input {
-  background-color: #fff;
-  color: #29313D;
-  border: 1px solid #848F95;
+  background-color: rgba(241, 251, 251, 0.5);
+  color: #29313d;
+  border: 1px solid #d2d3d3;
+}
+
+.light .gender_box {
+  border-color: #d2d3d3;
 }
 
 .light form p {
-  color: #D17274;
+  color: #d17274;
 }
 
-.light p{
+.light p {
   color: #05141c;
 }
 
 .light label {
-  color: #848F95;
+  color: #848f95;
 }
 
 .light button {
@@ -45,7 +48,7 @@
 
 .light .avatar {
   background-color: rgba(241, 251, 251, 0.5);
-  border-color: #21D997;
+  border-color: #21d997;
 }
 
 .light .singin {
@@ -56,5 +59,3 @@
   position: relative;
   overflow: hidden;
 }
-
-

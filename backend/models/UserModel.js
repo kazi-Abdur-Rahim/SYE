@@ -16,6 +16,14 @@ const UserModel = new Schema({
         text    : true,
     },
 
+    username:{
+        type    : String,
+        trim    : true,
+        text    : true,
+        unique: true,
+        require: true
+    },
+
     email:{
         type    : String,
         require : true,

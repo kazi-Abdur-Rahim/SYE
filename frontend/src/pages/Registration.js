@@ -32,6 +32,7 @@ const Registration = () => {
         date: formik.values.date,
         gender: formik.values.gender,
       })
+      console.log(data);
       navigate('/login')
     },
   });
