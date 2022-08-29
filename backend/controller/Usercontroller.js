@@ -112,3 +112,40 @@ exports.emailVarified = async (req,res)=>{
        
     }
 }
+
+exports.loginUser = async(req,res)=>{
+    try{
+        const {email,password} = req.body
+        const user = await Users.findOne({email})
+        console.log(user);
+        if(user){
+            if(bcrypt.compareSync(password, user.password)){
+                const token = jwtToken({ id: user._id.toString()},'7d')
+                res.send({
+                  id: user._id,
+                  username: user.username,
+                  email: user.email,
+                  fName: user.fName,
+                  lName: user.lName,
+                  verified: user.verified,
+                  token: token,
+                  message: "login success!"
+                })
+            }
+            else{
+                res.status(404).json({
+                    message: "Password Incorrrect"
+                })
+            }
+        }else{
+            res.status(404).json({
+                message: "Invalid Email"
+            })
+        }
+    }
+    catch(err){
+        res.status(404).json({
+            message: err.message
+        })
+    }
+}
