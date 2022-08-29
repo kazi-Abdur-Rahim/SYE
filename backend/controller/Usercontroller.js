@@ -71,8 +71,11 @@ exports.newuser = async (req,res)=>{
           const emailToken = jwtToken({ id: User._id.toString()},'1h')
 
           const url = `${process.env.BASE_URL}/activate/${emailToken}`
+
           sendEmailvarification(User.email,User.fName,url)
+
           const token = jwtToken({ id: User._id.toString()},'7d')
+          
           res.send({
             id: User._id,
             username: User.username,
