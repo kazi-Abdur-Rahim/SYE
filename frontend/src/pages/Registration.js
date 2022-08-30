@@ -116,7 +116,7 @@ const Registration = () => {
                     {formik.errors.date  && formik.touched.date ? <p className='text-red mb-2 font-primary text-base font-normal'>{formik.errors.date}</p> : null}
                     <div className='flex justify-between'>
                       <div 
-                      className='w-[30%] flex justify-between items-center border rounded-md border-box px-5 py-2 border-secondary_bg'>
+                      className='w-[30%] gender_box flex justify-between items-center border rounded-md border-box px-5 py-2 border-secondary_bg'>
                         <label 
                         htmlFor="male" 
                         className='mr-2 text-secondary_color text-base font-medium font-primary'>Male</label>
@@ -134,7 +134,7 @@ const Registration = () => {
         
                       </div>
                       <div 
-                      className='w-[30%] flex justify-between items-center border rounded-md border-box px-5 py-2 border-secondary_bg'>
+                      className='w-[30%] gender_box flex justify-between items-center border rounded-md border-box px-5 py-2 border-secondary_bg'>
                         <label 
                         htmlFor="female" 
                         className='mr-2 text-secondary_color text-base font-medium font-primary'>Female</label>
@@ -151,7 +151,7 @@ const Registration = () => {
                       
                       </div>
                       <div 
-                      className='w-[30%] flex justify-between items-center border rounded-md border-box px-5 py-2 border-secondary_bg'>
+                      className='w-[30%] gender_box flex justify-between items-center border rounded-md border-box px-5 py-2 border-secondary_bg'>
                         <label 
                         htmlFor="other" 
                         className='mr-2 text-secondary_color text-base font-medium font-primary'>Others</label>

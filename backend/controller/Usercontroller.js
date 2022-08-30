@@ -2,6 +2,7 @@ const Users = require('../models/UserModel')
 const { varifyEmail , validateLength, validateUsername }  = require('../handaler/Varification')
 const {sendEmailvarification} = require('../handaler/Mail')
 const { jwtToken } = require('../handaler/Token');
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
  
 
@@ -92,4 +93,22 @@ exports.newuser = async (req,res)=>{
         console.log(err.message);
     }
 
+}
+
+exports.emailVarified = async (req,res)=>{
+    const {token} = req.body
+    const user = jwt.verify(token, process.env.SECRET_TOKEN)
+    const check = await Users.findById(user.id)
+    if(check.verified === true) {
+        return res.status(400).json({
+            message: "this email is already verified"
+        })
+    }
+    else{
+        await Users.findByIdAndUpdate(user.id,{verified: true});
+        return res.status(200).json({
+            message: "account has been activated successfully"
+        })
+       
+    }
 }
